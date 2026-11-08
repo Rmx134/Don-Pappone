@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#130d0d">
+<meta name="description" content="Dom Pappone — pizzas, sanduíches e momentos especiais. Conheça nosso cardápio.">
+<title>Dom Pappone | Uma experiência de sabor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#100b0b;--panel:#191111;--panel2:#211616;--wine:#6f2028;--wine2:#8d3039;--gold:#c8a66a;--cream:#f3eee5;--muted:#b7aaa0;--line:rgba(243,238,229,.12);--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:var(--sans);line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+.topline{background:#080606;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.topline .wrap{display:flex;justify-content:space-between;gap:16px;padding:10px 0}
+header{position:sticky;top:0;z-index:20;background:rgba(16,11,11,.91);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{display:flex;align-items:center;gap:12px}.monogram{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font:600 19px var(--serif)}.brand-name{font:600 21px var(--serif);letter-spacing:.04em}.brand-name small{display:block;color:var(--gold);font:500 8px var(--sans);letter-spacing:.28em;text-transform:uppercase;margin-top:-3px}.navlinks{display:flex;align-items:center;gap:30px;font-size:12px;color:#ded4c8}.navlinks a{transition:color .2s}.navlinks a:hover{color:var(--gold)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;background:var(--gold);color:#1a1110;border:1px solid var(--gold);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:.25s}.nav-cta:hover,.btn:hover{background:transparent;color:var(--gold)}.mobile-toggle{display:none;background:none;border:1px solid var(--line);color:var(--cream);padding:9px 12px}
+.hero{min-height:650px;display:grid;align-items:center;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(13,8,8,.96) 0%,rgba(13,8,8,.82) 42%,rgba(13,8,8,.18) 100%),url('https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=2000&q=88') center/cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg),transparent 25%,transparent 80%,rgba(0,0,0,.25));pointer-events:none}.hero-content{position:relative;z-index:1;padding:95px 0 115px;max-width:620px}.eyebrow{color:var(--gold);font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:12px}.eyebrow:before{content:"";width:34px;height:1px;background:var(--gold)}h1,h2,h3,p{margin-top:0}.hero h1{font:600 clamp(48px,7vw,82px)/1.04 var(--serif);letter-spacing:-.035em;margin:24px 0}.hero h1 em{color:var(--gold);font-style:normal}.hero p{max-width:440px;color:#d1c5b9;font-size:15px;line-height:1.9;margin-bottom:30px}.hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.text-link{font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding:9px 0;color:var(--cream)}.hero-note{position:absolute;right:5%;bottom:85px;z-index:2;border:1px solid rgba(200,166,106,.55);padding:18px 22px;background:rgba(16,11,11,.45);backdrop-filter:blur(8px);font:italic 17px var(--serif);color:#f0dfc1}
+.intro{padding:90px 0 82px;display:grid;grid-template-columns:1fr 1.2fr;gap:90px;align-items:center}.intro h2,.section-head h2{font:600 clamp(34px,4vw,49px)/1.13 var(--serif);letter-spacing:-.02em;margin:18px 0}.intro p{color:var(--muted);font-size:14px;line-height:1.95;margin:0}.intro-stat{border-left:1px solid var(--gold);padding:5px 0 5px 28px}.intro-stat strong{display:block;font:600 35px var(--serif);color:var(--gold)}.intro-stat span{color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.feature{padding:20px 0 100px}.feature-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.feature-card{min-height:330px;position:relative;overflow:hidden;background:#241818}.feature-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .6s}.feature-card:hover img{transform:scale(1.04)}.feature-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.82),transparent 70%)}.feature-copy{position:absolute;z-index:1;left:28px;bottom:25px}.feature-copy span{color:var(--gold);font-size:9px;letter-spacing:.2em;text-transform:uppercase}.feature-copy h3{font:600 29px var(--serif);margin:7px 0 0}
+.menu-section{background:#160f0f;padding:95px 0 105px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.section-head{text-align:center;max-width:620px;margin:0 auto 38px}.section-head .eyebrow{justify-content:center}.section-head .eyebrow:before{display:none}.section-head p{color:var(--muted);font-size:13px}.menu-tools{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:28px;flex-wrap:wrap}.tabs{display:flex;gap:7px;flex-wrap:wrap}.tab{border:1px solid var(--line);background:transparent;color:var(--muted);padding:10px 15px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.2s}.tab.active,.tab:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,166,106,.07)}.search{background:#211717;border:1px solid var(--line);color:var(--cream);padding:11px 14px;min-width:220px;outline:none;font:12px var(--sans)}.search:focus{border-color:var(--gold)}.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.product{display:flex;flex-direction:column;min-width:0;background:#211717;border:1px solid rgba(255,255,255,.07);transition:.25s;overflow:hidden}.product:hover{border-color:rgba(200,166,106,.5);transform:translateY(-3px)}.product img{width:100%;height:210px;object-fit:contain;background:#fff;padding:8px;display:block}.product-info{padding:16px 16px 18px;display:flex;flex-direction:column;justify-content:center;min-height:112px}.product-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.product h3{font:600 18px var(--serif);margin:0 0 5px}.price{color:var(--gold);font-size:12px;font-weight:700;white-space:nowrap}.product p{color:#a99b90;font-size:10px;line-height:1.5;margin:0}.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:35px}.menu-foot{text-align:center;color:#8e8178;font-size:10px;margin:25px 0 0}
+.experience{padding:100px 0;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.experience-image{height:470px;position:relative}.experience-image img{width:100%;height:100%;object-fit:cover}.experience-image:after{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid rgba(200,166,106,.55);z-index:-1}.experience-copy h2{font:600 46px/1.12 var(--serif);margin:18px 0}.experience-copy p{color:var(--muted);font-size:13px;line-height:1.9}.qualities{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.quality{border-top:1px solid var(--line);padding-top:13px}.quality strong{font:600 17px var(--serif);display:block;color:var(--gold)}.quality span{font-size:10px;color:var(--muted)}
+.contact{background:linear-gradient(90deg,rgba(15,9,9,.96),rgba(15,9,9,.8)),url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=85') center/cover;padding:82px 0}.contact-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.contact h2{font:600 42px var(--serif);margin:12px 0}.contact p{color:#c2b5a9;font-size:13px;margin:0}
+footer{background:#090606;padding:38px 0 25px}.footer-main{display:flex;justify-content:space-between;gap:30px;align-items:flex-start;padding-bottom:30px;border-bottom:1px solid var(--line)}.footer-main p{font-size:11px;color:var(--muted);max-width:300px;margin:12px 0 0}.footer-contact{text-align:right;color:var(--muted);font-size:12px;line-height:2}.copyright{display:flex;justify-content:space-between;gap:15px;padding-top:18px;color:#766b64;font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+
+/* Interações e animações */
+.cart-trigger{display:flex;align-items:center;gap:9px;background:transparent;border:1px solid var(--gold);color:var(--cream);padding:11px 15px;cursor:pointer;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:.25s}.cart-trigger:hover{background:var(--gold);color:#170f0d}.cart-count{display:grid;place-items:center;width:21px;height:21px;border-radius:50%;background:var(--gold);color:#170f0d;font-size:10px;font-weight:700}.cart-trigger:hover .cart-count{background:#170f0d;color:var(--gold)}
+.product{animation:cardIn .5s both}.product:nth-child(3n+2){animation-delay:.06s}.product:nth-child(3n){animation-delay:.12s}.product img{transition:transform .55s,filter .4s}.product:hover img{transform:scale(1.035);filter:saturate(1.08)}.add-product{margin-top:13px;width:100%;display:flex;align-items:center;justify-content:space-between;background:rgba(200,166,106,.1);border:1px solid rgba(200,166,106,.45);color:var(--gold);padding:10px 12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.25s}.add-product:hover{background:var(--gold);color:#170f0d}.add-product span{font-size:17px}.add-product.added{background:#29402f;border-color:#557b5d;color:#d8f0dc}
+.drawer-backdrop,.checkout-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.66);backdrop-filter:blur(4px);z-index:50;opacity:0;visibility:hidden;transition:.3s}.drawer-backdrop.open,.checkout-backdrop.open{opacity:1;visibility:visible}.cart-drawer{position:fixed;z-index:51;right:0;top:0;height:100dvh;width:min(440px,100%);background:#171010;border-left:1px solid var(--line);padding:26px;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .38s cubic-bezier(.2,.8,.2,1)}.cart-drawer.open{transform:translateX(0)}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}.drawer-head h2{font:600 30px var(--serif);margin:5px 0 0}.icon-close{width:38px;height:38px;background:transparent;border:1px solid var(--line);color:var(--cream);font-size:25px;cursor:pointer}.cart-items{overflow:auto;flex:1;padding:12px 0}.cart-empty{text-align:center;color:var(--muted);padding:65px 10px;font:20px var(--serif);line-height:1.7}.cart-empty small{font:12px var(--sans)}.cart-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);animation:fadeUp .25s}.cart-row h3{font:600 16px var(--serif);margin:0 0 4px}.cart-row small{color:var(--gold);font-size:11px}.qty-control{display:flex;align-items:center;gap:10px}.qty-control button{width:27px;height:27px;background:#2a1c1c;border:1px solid var(--line);color:var(--cream);cursor:pointer}.drawer-bottom{border-top:1px solid var(--line);padding-top:17px}.total-line,.checkout-total{display:flex;justify-content:space-between;align-items:center;font-size:13px}.total-line strong,.checkout-total strong{font-size:18px;color:var(--gold)}.fee-note,.checkout-disclaimer{color:#988b82;font-size:10px;line-height:1.6}.checkout-open{width:100%;margin-top:10px;cursor:pointer}.checkout-open:disabled{opacity:.4;cursor:not-allowed}
+.checkout-backdrop{z-index:60;display:grid;place-items:center;padding:18px;overflow:auto}.checkout-modal{width:min(620px,100%);max-height:min(92dvh,900px);overflow:auto;background:#171010;border:1px solid rgba(200,166,106,.4);padding:26px;transform:translateY(18px) scale(.985);transition:transform .3s}.checkout-backdrop.open .checkout-modal{transform:none}.checkout-modal form{padding-top:18px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:15px}.field-grid .wide{grid-column:1/-1}.checkout-modal label,.field-label{display:block;color:#d9cfc4;font-size:11px;margin-bottom:12px}.checkout-modal input:not([type=radio]),.checkout-modal textarea{width:100%;display:block;margin-top:6px;padding:12px;background:#241919;border:1px solid var(--line);color:var(--cream);outline:none;font:12px var(--sans);border-radius:0}.checkout-modal input:focus,.checkout-modal textarea:focus{border-color:var(--gold)}.choice-field{border:1px solid var(--line);padding:12px;margin:4px 0 16px;display:flex;gap:18px;flex-wrap:wrap}.choice-field legend{color:var(--gold);font-size:11px;padding:0 7px}.choice{display:flex!important;align-items:center;gap:7px;margin:0!important}.choice input,.payment-options input{accent-color:var(--gold)}.payment-options{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0 15px}.payment-options label{margin:0;cursor:pointer}.payment-options span{display:block;text-align:center;border:1px solid var(--line);padding:11px 5px;color:var(--muted);transition:.2s}.payment-options input{position:absolute;opacity:0}.payment-options input:checked+span{border-color:var(--gold);color:var(--gold);background:rgba(200,166,106,.08)}.hidden{display:none!important}.checkout-total{border-top:1px solid var(--line);padding:16px 0 6px}.submit-order{width:100%;cursor:pointer}.order-result{padding-top:24px;text-align:center}.result-mark{margin:auto;width:48px;height:48px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:23px}.order-result h3{font:600 27px var(--serif);margin:13px 0 4px}.order-result p{font-size:12px;color:var(--muted)}.order-result pre{white-space:pre-wrap;text-align:left;background:#241919;padding:15px;color:#ddd1c5;font:11px/1.7 var(--sans);max-height:230px;overflow:auto}.order-result .btn{cursor:pointer;margin:8px}.order-result .text-link{display:inline-block;margin:8px}.drawer-open{overflow:hidden}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+@media(max-width:900px){.navlinks{gap:16px}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.intro{gap:35px}.experience{gap:40px}.hero-note{right:24px}}
+@media(max-width:650px){.wrap{width:min(100% - 32px,1160px)}.topline .wrap{justify-content:center}.topline .wrap span:last-child{display:none}.nav{height:70px}.nav-cta{display:none}.mobile-toggle{display:block}.navlinks{display:none;position:absolute;top:70px;left:0;right:0;background:#130d0d;padding:18px 24px 24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.hero{min-height:620px;background-position:58% center}.hero-content{padding:80px 0 105px}.hero h1{font-size:54px}.hero-note{display:none}.intro{padding:70px 0;grid-template-columns:1fr;gap:24px}.intro-stat{margin-top:8px}.feature{padding-bottom:70px}.feature-grid{grid-template-columns:1fr}.feature-card{min-height:260px}.menu-section{padding:72px 0}.menu-tools{align-items:stretch}.tabs{overflow:auto;flex-wrap:nowrap;padding-bottom:5px}.tab{white-space:nowrap}.search{width:100%}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.product img{height:145px}.product-info{padding:12px}.product h3{font-size:15px}.product p{font-size:9px}.experience{padding:75px 0;grid-template-columns:1fr;gap:42px}.experience-image{height:330px;margin-right:14px}.experience-copy h2{font-size:38px}.contact-inner{align-items:flex-start;flex-direction:column}.contact h2{font-size:35px}.footer-main{flex-direction:column}.footer-contact{text-align:left}.copyright{flex-direction:column;gap:5px}}
+
+/* ===== arredondado + animacoes ===== */
+:root{--eo:cubic-bezier(0.23,1,0.32,1);--r:22px;--r-sm:14px}
+html{scroll-padding-top:96px}
+/* arredondado */
+.btn,.nav-cta,.cart-trigger,.tab,.search,.add-product,.text-link{border-radius:999px}
+.text-link{border-bottom:0;padding:11px 4px;position:relative}
+.text-link:after{content:"";position:absolute;left:4px;right:4px;bottom:6px;height:1px;background:var(--gold);transform-origin:left;transition:transform .35s var(--eo)}
+.mobile-toggle{border-radius:12px}
+.search{padding:11px 18px}
+.hero-note{border-radius:var(--r-sm)}
+.feature-card{border-radius:26px}
+.menu-section{width:min(1280px,calc(100% - 32px));margin:0 auto;border-radius:32px;border:1px solid var(--line)}
+.product{border-radius:var(--r)}
+.product img{width:calc(100% - 16px);margin:8px 8px 0;height:204px;border-radius:14px}
+.add-product{border-radius:12px}
+.experience-image img{border-radius:26px}
+.experience-image:after{border-radius:26px}
+.contact{width:min(1160px,calc(100% - 48px));margin:0 auto 90px;border-radius:30px;overflow:hidden}
+.contact .contact-inner{width:auto;padding:0 56px}
+.cart-drawer{border-radius:26px 0 0 26px}
+.checkout-modal{border-radius:26px}
+.icon-close,.qty-control button{border-radius:50%}
+.checkout-modal input:not([type=radio]),.checkout-modal textarea{border-radius:12px}
+.choice-field{border-radius:14px}
+.payment-options span{border-radius:12px}
+.order-result pre{border-radius:14px}
+/* entrada do hero, em sequencia */
+@keyframes heroIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero-content>*{animation:heroIn .85s var(--eo) both}
+.hero-content>:nth-child(1){animation-delay:.05s}.hero-content>:nth-child(2){animation-delay:.15s}.hero-content>:nth-child(3){animation-delay:.28s}.hero-content>:nth-child(4){animation-delay:.4s}
+.hero-note{animation:heroIn .9s .75s var(--eo) both}
+/* revelar ao rolar, com escalonamento */
+.reveal{transition:opacity .8s var(--eo),transform .8s var(--eo)}
+.reveal .feature-card,.reveal .quality,.reveal .experience-image{opacity:0;transform:translateY(26px) scale(.985)}
+.reveal.visible .feature-card,.reveal.visible .quality,.reveal.visible .experience-image{opacity:1;transform:none;transition:opacity .8s var(--eo),transform .8s var(--eo)}
+.reveal.visible .feature-card:nth-child(2),.reveal.visible .quality:nth-child(2){transition-delay:.12s}
+/* cabecalho, toque e carrinho */
+header{transition:box-shadow .3s ease,background-color .3s ease}
+header.scrolled{background:rgba(16,11,11,.97);box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.btn,.nav-cta,.cart-trigger,.tab,.add-product{transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .12s var(--eo)}
+.btn:active,.nav-cta:active,.cart-trigger:active,.tab:active,.add-product:active{transform:scale(.96)}
+.btn span{display:inline-block;transition:transform .3s var(--eo)}
+.product{transition:border-color .2s ease,transform .3s var(--eo),box-shadow .3s ease}
+@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.35)}100%{transform:scale(1)}}
+.cart-count.bump{animation:bump .4s var(--eo)}
+@keyframes pop{0%{transform:scale(.96)}60%{transform:scale(1.03)}100%{transform:scale(1)}}
+.add-product.added{animation:pop .4s var(--eo)}
+.cart-drawer{transition:transform .45s var(--eo)}
+@media (hover:hover) and (pointer:fine){
+.btn:hover span{transform:translateX(4px)}
+.text-link:hover:after{transform:scaleX(.4)}
+.product:hover{box-shadow:0 18px 40px rgba(0,0,0,.35)}
+}
+@media (hover:none){.product:hover{transform:none}.product:hover img,.feature-card:hover img{transform:none}}
+/* menu movel: abre e fecha pelo mesmo caminho */
+@media(max-width:650px){
+.navlinks{display:flex;visibility:hidden;opacity:0;transform:translateY(-8px) scale(.98);transform-origin:top right;pointer-events:none;border-radius:0 0 22px 22px;transition:opacity .22s var(--eo),transform .32s var(--eo),visibility 0s linear .32s}
+.navlinks.open{visibility:visible;opacity:1;transform:none;pointer-events:auto;transition-delay:0s}
+.product img{height:140px}
+.menu-section{border-radius:24px}
+.contact{width:calc(100% - 32px);margin-bottom:60px;border-radius:24px}
+.contact .contact-inner{padding:0 24px;flex-wrap:wrap}
+.cart-drawer{border-radius:22px 0 0 22px}
+}
+@media(prefers-reduced-motion:reduce){.hero-content>*,.hero-note{animation:none}.reveal .feature-card,.reveal .quality,.reveal .experience-image{opacity:1;transform:none}.navlinks{transform:none!important}}
+
+/* sem selecao com o mouse */
+body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea,pre{-webkit-user-select:text;user-select:text}
+body ::selection{background:transparent}
+input::selection,textarea::selection,pre::selection{background:rgba(200,166,106,.4)}
+img{-webkit-user-drag:none;user-drag:none}
+/* pizzas flutuando no escuro, sem fundo branco */
+.product{background:radial-gradient(120% 55% at 50% 0%,#33201f 0%,#211717 62%)}
+.product img{background:transparent;padding:0;width:172px;height:172px;margin:24px auto 4px;border-radius:50%;object-fit:cover;object-view-box:inset(3.5%);box-shadow:0 18px 36px rgba(0,0,0,.55),0 0 0 1px rgba(200,166,106,.28)}
+/* sanduiches e bebidas (fotos recortadas): mesa de champanhe no lugar do branco */
+.cutout{margin:8px 8px 0;height:200px;border-radius:16px;background:radial-gradient(90% 90% at 50% 40%,#efe5d3,#d9cbb2);display:grid;place-items:center;overflow:hidden}
+.product .cutout img{width:100%;height:100%;margin:0;border-radius:0;box-shadow:none;object-fit:contain;object-view-box:none;mix-blend-mode:multiply}
+@media(max-width:650px){.product img{width:128px;height:128px;margin-top:18px}.product .cutout img{width:100%;height:100%}.cutout{height:140px}}
+
+/* bebidas e sanduíches: foto enquadrada em fundo branco, como na versão anterior */
+.product.is-framed img{width:calc(100% - 16px);height:204px;margin:8px 8px 0;padding:8px;border-radius:14px;background:#fff;object-fit:contain;object-view-box:none;box-shadow:none}
+@media(max-width:650px){.product.is-framed img{width:calc(100% - 16px);height:140px;margin:8px 8px 0}}
+/* monte sua pizza */
+.builder-backdrop{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:18px;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s linear .3s}
+.builder-backdrop.open{opacity:1;visibility:visible;transition-delay:0s}.builder-backdrop.extras{z-index:80}
+.builder-modal,.extras-modal{width:min(880px,100%);max-height:min(92dvh,920px);display:flex;flex-direction:column;background:#171010;border:1px solid rgba(200,166,106,.4);border-radius:26px;overflow:hidden;transform:translateY(18px) scale(.985);transition:transform .35s var(--eo)}
+.extras-modal{width:min(520px,100%);max-height:min(88dvh,840px)}
+.builder-backdrop.open .builder-modal,.builder-backdrop.open .extras-modal{transform:none}
+.builder-head{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 22px;background:var(--wine);border-bottom:1px solid var(--line)}.builder-head h2{font:600 24px var(--serif);margin:0;letter-spacing:.01em}
+.builder-body{display:grid;grid-template-columns:200px 1fr;gap:26px;padding:22px 24px;overflow:auto;flex:1;min-height:0}
+.builder-side{text-align:center}.builder-side img{width:100%;height:170px;object-fit:cover;border-radius:16px;display:block;box-shadow:0 14px 28px rgba(0,0,0,.45)}.builder-side small{display:block;color:#8e8178;font-size:10px;margin:8px 0 20px}.builder-side .qty-label{color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}.builder-side .qty-control{justify-content:center}.builder-side .qty-control strong{min-width:24px;text-align:center}
+.builder-intro{color:var(--muted);font-size:12px;line-height:1.7;margin:0 0 14px}
+.builder-box{border:1px solid var(--line);border-radius:18px;background:#1d1414;overflow:hidden}
+.builder-box-head{display:flex;align-items:baseline;gap:8px;padding:13px 16px;border-bottom:1px solid var(--line);font-size:13px}.builder-box-head strong{font:600 16px var(--serif);color:var(--gold)}.builder-box-head span{color:var(--muted);font-size:11px}.builder-box-head em{margin-left:auto;font-style:normal;font-weight:700;font-size:12px;color:var(--cream);transition:color .2s}.builder-box-head em.full{color:var(--gold)}.builder-box-head em.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.builder-list{max-height:min(44dvh,360px);overflow:auto;padding:2px 16px}
+.tg{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 2px;border-bottom:1px dashed var(--line);font-size:13px;cursor:pointer;transition:opacity .2s}.tg:last-child{border-bottom:0}.tg input{position:absolute;opacity:0;pointer-events:none}.tg i{flex:none;width:40px;height:23px;border-radius:999px;background:#3a2c2c;position:relative;transition:background .25s}.tg i:after{content:"";position:absolute;left:3px;top:3px;width:17px;height:17px;border-radius:50%;background:#a99b90;transition:transform .3s var(--eo),background .25s}.tg input:checked+i{background:rgba(200,166,106,.38)}.tg input:checked+i:after{transform:translateX(17px);background:var(--gold)}.tg input:focus-visible+i{outline:2px solid var(--gold);outline-offset:2px}.tg.disabled{opacity:.38;cursor:not-allowed}
+.builder-extras-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:13px 16px;border-top:1px solid var(--line);background:#191111}
+.btn-mini{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:999px;border:1px solid var(--gold);background:rgba(200,166,106,.1);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background-color .2s,color .2s,transform .12s}.btn-mini:hover{background:var(--gold);color:#170f0d}.btn-mini:active{transform:scale(.96)}
+.extras-sum{font-size:11px;color:var(--muted);line-height:1.5;flex:1;min-width:140px}.extras-sum b{color:var(--gold)}
+.builder-size{display:block;margin-top:20px;font:600 17px var(--serif)}.builder-size select{display:block;width:100%;margin-top:9px;padding:12px 14px;background:#241919;border:1px solid var(--line);color:var(--cream);border-radius:999px;font:13px var(--sans);outline:none}.builder-size select:focus{border-color:var(--gold)}
+.builder-foot{display:flex;justify-content:center;align-items:center;gap:12px;padding:14px 22px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:#140d0d}
+.builder-foot .back{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--cream);font-size:20px;cursor:pointer;transition:border-color .2s,color .2s}.builder-foot .back:hover{border-color:var(--gold);color:var(--gold)}
+.builder-foot .btn{cursor:pointer;min-width:260px}.builder-foot .btn:disabled{opacity:.4;cursor:not-allowed}.builder-foot .btn:disabled:hover{background:var(--gold);color:#1a1110}
+.extras-body{overflow:auto;padding:4px 22px 18px;flex:1;min-height:0}.extras-body h4{margin:20px 0 7px;font:700 12px var(--sans);letter-spacing:.04em;color:var(--cream)}.extras-body h4 small{color:var(--muted);font-weight:500}
+.ex-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:11px 12px;background:#211717;border-bottom:1px solid var(--line);font-size:12px;cursor:pointer;transition:background-color .2s}.ex-row:first-of-type{border-radius:12px 12px 0 0}.ex-row:last-child{border-radius:0 0 12px 12px;border-bottom:0}.ex-row:only-of-type{border-radius:12px}.ex-row:hover{background:#2a1c1c}.ex-row input{accent-color:var(--gold);width:16px;height:16px;margin:0}.ex-row b{color:var(--gold);font-weight:700;white-space:nowrap}
+.row-extras{margin-top:10px;padding:8px 13px;font-size:9.5px}.builder-head small{display:block;color:#e8c9a0;font-size:12px;margin-top:2px}
+.cart-row>div:first-child{min-width:0}.cart-detail{margin:6px 0 0;color:#a99b90;font-size:11px;line-height:1.55}
+@media(max-width:650px){.builder-backdrop{padding:0;align-items:end}.builder-modal,.extras-modal{width:100%;max-height:94dvh;border-radius:24px 24px 0 0}.builder-body{grid-template-columns:1fr;gap:16px;padding:18px}.builder-side{display:grid;grid-template-columns:96px 1fr;gap:4px 16px;align-items:center;text-align:left}.builder-side img{grid-row:1/4;height:96px;border-radius:14px}.builder-side small{margin:0}.builder-side .qty-control{justify-content:flex-start}.builder-foot .btn{min-width:0;flex:1}.builder-list{max-height:40dvh}.builder-head h2{font-size:21px}}
+/* observação por item */
+.cart-row .item-note{grid-column:1/-1;width:100%;margin-top:2px;padding:10px 14px;background:#241919;border:1px solid var(--line);border-radius:12px;color:var(--cream);font:12px var(--sans);outline:none;transition:border-color .2s}
+.cart-row .item-note::placeholder{color:#8e8178}.cart-row .item-note:focus{border-color:var(--gold)}
+/* bairros e taxa */
+.checkout-modal select{width:100%;display:block;margin-top:6px;padding:12px;background:#241919;border:1px solid var(--line);color:var(--cream);outline:none;font:12px var(--sans);border-radius:12px}
+.checkout-modal select:focus{border-color:var(--gold)}
+.checkout-total.sub{border-top:0;padding:5px 0}.checkout-total.sub strong{font-size:14px;color:var(--cream)}
+.checkout-total.grand{border-top:1px solid var(--line);margin-top:6px;padding-top:14px}
+.areas{padding:10px 0 80px}.areas .section-head{margin-bottom:24px}
+.areas-search{display:block;width:min(380px,100%);margin:0 auto 22px}
+.area-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.area{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:#191111;font-size:12px;color:#ded4c8}.area b{color:var(--gold);font-weight:700;white-space:nowrap}.area.free b{color:#9fd3a8}
+/* CEP */
+.cep-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;margin-bottom:4px}
+.btn.cep-btn{padding:12px 18px;margin-bottom:12px;cursor:pointer;border-radius:12px}
+.cep-status{font-size:11px;min-height:16px;margin:2px 0 12px;color:var(--muted);line-height:1.5}
+.cep-status.ok{color:#9fd3a8}.cep-status.warn{color:#e3c27a}.cep-status.err{color:#e59a9a}
+.checkout-modal input[readonly]{opacity:.75}
+/* barra da sacola no celular */
+.cart-bar{display:none;position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:40;align-items:center;justify-content:space-between;gap:12px;padding:15px 20px;border-radius:999px;border:1px solid var(--gold);background:var(--gold);color:#1a1110;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 34px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .4s var(--eo)}
+.cart-bar.show{transform:none}
+@media(max-width:650px){.cart-bar{display:flex}body.has-cart{padding-bottom:84px}}
+</style>
+</head>
+<body>
+<div class="topline"><div class="wrap"><span>Uma tradição de sabor</span><span>Atendimento • Juiz de Fora, MG</span></div></div>
+<header><div class="wrap nav">
+<a class="brand" href="#inicio"><span class="monogram">DP</span><span class="brand-name">DOM PAPPONE<small>Pizzaria & Restaurante</small></span></a>
+<nav class="navlinks" id="navlinks"><a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#experiencia">Nossa casa</a><a href="#bairros">Entrega</a><a href="#contato">Contato</a></nav>
+<button class="cart-trigger" id="openCart" type="button">Sacola <span class="cart-count" id="cartCount">0</span> <b>▣</b></button>
+<button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu">☰</button>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap"><div class="hero-content">
+<div class="eyebrow">Sabor que reúne</div>
+<h1>Uma boa pizza.<br><em>Momentos</em><br>inesquecíveis.</h1>
+<p>Receitas generosas, sabores marcantes e aquele convite irresistível para compartilhar a mesa com quem importa.</p>
+<div class="hero-actions"><a class="btn" href="#cardapio">Explorar cardápio <span>→</span></a><a class="text-link" href="tel:+553232362338">Ligar para pedir</a></div>
+</div></div><div class="hero-note">Feito para compartilhar.</div></section>
+<section class="intro wrap reveal"><div><div class="eyebrow">Bem-vindo ao Dom Pappone</div><h2>Mais que uma refeição.<br>Uma ocasião especial.</h2></div><div><p>Do primeiro pedaço ao último detalhe, o Dom Pappone é o lugar para aproveitar bons sabores. Descubra pizzas clássicas e especiais, sanduíches, porções e acompanhamentos para todos os momentos.</p><div class="intro-stat" style="margin-top:28px"><strong>Desde sempre</strong><span>Compartilhando bons momentos</span></div></div></section>
+<section class="feature wrap reveal"><div class="feature-grid">
+<a class="feature-card" href="#cardapio"><img loading="lazy" src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1100&q=85" alt="Pizza artesanal recém-assada"><div class="feature-copy"><span>O clássico da casa</span><h3>Pizzas para todos os gostos</h3></div></a>
+<a class="feature-card" href="#cardapio"><img loading="lazy" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Hambúrguer artesanal"><div class="feature-copy"><span>Para matar a fome</span><h3>Sanduíches & porções</h3></div></a>
+</div></section>
+<section class="menu-section" id="cardapio"><div class="wrap">
+<div class="section-head reveal"><div class="eyebrow">Escolha seu próximo favorito</div><h2>Nosso cardápio</h2><p>Sabores para dividir, experimentar e querer de novo.</p></div>
+<div class="menu-tools"><div class="tabs" id="tabs">
+<button class="tab active" data-category="Todas">Todos</button><button class="tab" data-category="Pizzas">Pizzas</button><button class="tab" data-category="Doces">Pizzas doces</button><button class="tab" data-category="Sanduíches">Sanduíches</button><button class="tab" data-category="Porções">Porções</button><button class="tab" data-category="Bebidas">Bebidas</button>
+</div><input class="search" id="search" type="search" placeholder="Buscar no cardápio..." aria-label="Buscar no cardápio"></div>
+<div class="products" id="products"></div>
+<p class="menu-foot">Preços e disponibilidade podem sofrer alterações. Consulte o restaurante antes de realizar seu pedido.</p>
+</div></section>
+<section class="experience wrap reveal" id="experiencia">
+<div class="experience-image"><img loading="lazy" src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1100&q=85" alt="Pizza com ingredientes frescos"></div>
+<div class="experience-copy"><div class="eyebrow">A experiência Dom Pappone</div><h2>O melhor da mesa é estar junto.</h2><p>Uma mesa cheia, uma conversa boa e sabores que agradam. Seja para um jantar em família ou para reunir os amigos, encontre no nosso cardápio uma opção para cada vontade.</p>
+<div class="qualities"><div class="quality"><strong>Variedade</strong><span>Clássicos e combinações especiais</span></div><div class="quality"><strong>Para compartilhar</strong><span>Opções para todos os momentos</span></div></div>
+</div></section>
+<section class="areas wrap reveal" id="bairros"><div class="section-head"><div class="eyebrow">Delivery</div><h2>Bairros atendidos</h2><p>Confira a taxa de entrega do seu bairro.</p></div><input class="search areas-search" id="areaSearch" type="search" placeholder="Buscar bairro..." aria-label="Buscar bairro"><div class="area-grid" id="areaGrid"></div></section>
+<section class="contact" id="contato"><div class="wrap contact-inner"><div><div class="eyebrow">Estamos à disposição</div><h2>Seu próximo momento<br>começa aqui.</h2><p>Entre em contato e consulte as opções de atendimento.</p></div><a class="btn" href="tel:+553232362338">Ligar agora <span>↗</span></a></div></section>
+</main>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Sacola de pedidos" aria-hidden="true">
+  <div class="drawer-head"><div><span class="eyebrow">Seu pedido</span><h2>Sua sacola</h2></div><button class="icon-close" id="closeCart" aria-label="Fechar sacola">×</button></div>
+  <div class="cart-items" id="cartItems"><div class="cart-empty">Sua sacola está vazia.<br><small>Adicione seus favoritos do cardápio.</small></div></div>
+  <div class="drawer-bottom"><div class="total-line"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div><p class="fee-note">Taxa de entrega calculada/confirmada pelo restaurante.</p><button class="btn checkout-open" id="goCheckout" disabled>Continuar pedido →</button></div>
+</aside>
+<div class="checkout-backdrop" id="checkoutBackdrop">
+  <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="drawer-head"><div><span class="eyebrow">Só mais alguns detalhes</span><h2 id="checkoutTitle">Finalizar pedido</h2></div><button class="icon-close" id="closeCheckout" aria-label="Fechar">×</button></div>
+    <form id="checkoutForm">
+      <div class="field-grid"><label>Seu nome<input name="customer" required placeholder="Nome completo"></label><label>Telefone<input name="phone" type="tel" required placeholder="(32) 99999-9999"></label></div>
+      <fieldset class="choice-field"><legend>Como deseja receber?</legend><label class="choice"><input type="radio" name="fulfillment" value="Delivery" checked> <span>Delivery</span></label><label class="choice"><input type="radio" name="fulfillment" value="Retirada no local"> <span>Retirar no local</span></label></fieldset>
+      <div id="addressFields" class="address-fields">
+        <div class="cep-row"><label>CEP<input name="cep" id="cepInput" inputmode="numeric" maxlength="9" autocomplete="postal-code" placeholder="00000-000"></label><button class="btn cep-btn" id="cepBtn" type="button">Buscar CEP</button></div>
+        <p class="cep-status" id="cepStatus" aria-live="polite">Digite o CEP e preenchemos o endereço para você.</p>
+        <div class="field-grid"><label class="wide">Rua<input name="address" id="addrStreet" placeholder="Nome da rua"></label><label>Número<input name="number" id="addrNumber" inputmode="numeric" placeholder="Nº"></label><label>Complemento<input name="complement" placeholder="Apto, bloco... (opcional)"></label><label>Bairro<select name="neighborhood" id="addrDistrict"><option value="">Selecione o bairro</option></select></label><label>Cidade / UF<input name="city" id="addrCity" placeholder="Cidade - UF"></label><label class="wide">Referência<input name="reference" placeholder="Ponto de referência (opcional)"></label></div></div>
+      <label class="field-label">Forma de pagamento</label><div class="payment-options"><label><input type="radio" name="payment" value="Crédito" required><span>Crédito</span></label><label><input type="radio" name="payment" value="Débito"><span>Débito</span></label><label><input type="radio" name="payment" value="PIX"><span>PIX</span></label><label><input type="radio" name="payment" value="Dinheiro"><span>Dinheiro</span></label></div>
+      <label id="changeField" class="change-field hidden">Precisa de troco? Informe para quanto<input name="change" placeholder="Ex.: R$ 100,00"></label>
+      <label class="field-label" for="orderNote">Observações do pedido</label><textarea id="orderNote" name="note" rows="3" placeholder="Ex.: tirar cebola, ponto de referência, instruções... "></textarea>
+      <div class="checkout-total sub"><span>Produtos</span><strong id="checkoutSubtotal">R$ 0,00</strong></div>
+      <div class="checkout-total sub"><span>Taxa de entrega</span><strong id="checkoutFee">Selecione o bairro</strong></div>
+      <div class="checkout-total grand"><span>Total</span><strong id="checkoutTotal">R$ 0,00</strong></div>
+      <p class="checkout-disclaimer">A taxa segue a tabela de bairros atendidos; o restaurante confirma valor e disponibilidade. Este formulário prepara os detalhes do pedido; não realiza cobrança online.</p>
+      <button class="btn submit-order" type="submit">Revisar pedido <span>→</span></button>
+    </form>
+    <div class="order-result hidden" id="orderResult"><div class="result-mark">✓</div><h3>Pedido organizado!</h3><p>Abrimos o WhatsApp do restaurante com o seu pedido pronto. Se não abrir, toque no botão abaixo.</p><pre id="orderSummary"></pre><a class="btn" id="waSend" href="#" target="_blank" rel="noopener">Enviar pedido pelo WhatsApp</a><button class="btn" id="copyOrder" type="button">Copiar resumo do pedido</button><a class="text-link" href="tel:+553232362338">Ligar para confirmar</a></div>
+  </section>
+</div>
+<div class="builder-backdrop" id="builderBackdrop"><section class="builder-modal" role="dialog" aria-modal="true" aria-labelledby="builderTitle">
+  <div class="builder-head"><h2 id="builderTitle">Detalhes do produto</h2><button class="icon-close" id="closeBuilder" type="button" aria-label="Fechar">×</button></div>
+  <div class="builder-body">
+    <aside class="builder-side"><img id="builderImg" alt="Pizza a moda do cliente"><small>Imagem ilustrativa</small><div class="qty-label">Quantidade</div><div class="qty-control"><button type="button" id="bMinus" aria-label="Diminuir">−</button><strong id="bQty">1</strong><button type="button" id="bPlus" aria-label="Aumentar">＋</button></div></aside>
+    <div class="builder-main">
+      <h3 style="font:600 26px var(--serif);margin:0 0 8px">Pizza a moda do cliente</h3>
+      <p class="builder-intro">Monte sua pizza com até no máximo 8 ingredientes, mas pode escolher os adicionais. Desmarque e marque os ingredientes a sua escolha.</p>
+      <div class="builder-box">
+        <div class="builder-box-head"><strong>Guarnições</strong><span>(Máximo de 8 itens)</span><em id="bCount">0/8</em></div>
+        <div class="builder-list" id="bList"></div>
+        <div class="builder-extras-bar"><button class="btn-mini" id="openExtras" type="button">＋ Adicionar opcionais</button><div class="extras-sum" id="bExtrasSum"></div></div>
+      </div>
+      <label class="builder-size">Selecione uma opção<select id="bSize"><option value="Família">Família - R$ 77,90</option></select></label>
+    </div>
+  </div>
+  <div class="builder-foot"><button class="back" id="builderBack" type="button" aria-label="Voltar">←</button><button class="btn" id="builderAdd" type="button" disabled>Adicionar · <span id="bTotal">R$ 77,90</span></button></div>
+</section></div>
+<div class="builder-backdrop extras" id="extrasBackdrop"><section class="extras-modal" role="dialog" aria-modal="true" aria-labelledby="extrasTitle">
+  <div class="builder-head"><div><h2 id="extrasTitle">Adicionar ingredientes</h2><small id="extrasFor"></small></div><button class="icon-close" id="closeExtrasX" type="button" aria-label="Fechar">×</button></div>
+  <div class="extras-body" id="extrasBody"></div>
+  <div class="builder-foot"><button class="btn" id="closeExtras" type="button" style="min-width:160px">Fechar</button></div>
+</section></div>
+<button class="cart-bar" id="cartBar" type="button" aria-label="Abrir sacola"><span id="cartBarText">Ver sacola</span><span id="cartBarTotal">R$ 0,00</span></button>
+<footer><div class="wrap"><div class="footer-main"><div><a class="brand" href="#inicio"><span class="monogram">DP</span><span class="brand-name">DOM PAPPONE<small>Pizzaria & Restaurante</small></span></a><p>Sabores para compartilhar e momentos para guardar.</p></div><div class="footer-contact"><strong style="color:var(--cream)">Fale com a gente</strong><br><a href="tel:+553232362338">(32) 3236-2338</a><br><a href="tel:+553232362837">(32) 3236-2837</a><br><a href="tel:+553230829420">(32) 3082-9420</a><br>Rua Antônio Altaf, 480 · Cascatinha<br>Juiz de Fora - MG</div></div><div class="copyright"><span>© <span id="year"></span> Dom Pappone · CNPJ 00.634.053/0001-64. Todos os direitos reservados.</span><span>Uma experiência de sabor.</span></div></div></footer>
+<script>
+const products = [
+["Pizza a moda do cliente","77,90","Monte sua pizza com até 8 ingredientes e escolha seus adicionais.","Pizzas","pizza"],
+["Alho","65,90","Alho, mussarela e tomate.","Pizzas","pizza"],
+["Atum","77,90","Atum, cebola e mussarela.","Pizzas","pizza"],
+["Baiana","65,90","Calabresa moída, cebola, molho de pimenta, mussarela, ovo e parmesão.","Pizzas","pizza"],
+["Bacon","69,90","Bacon, cebola e mussarela.","Pizzas","pizza"],
+["Caipira","65,90","Cebola, frango desfiado, milho, mussarela e requeijão.","Pizzas","pizza"],
+["Calabresa","65,90","Calabresa fatiada, cebola e mussarela.","Pizzas","pizza"],
+["Camaiore","65,90","Calabresa fatiada, mussarela e requeijão.","Pizzas","pizza"],
+["Canadense","65,90","Cebola, lombo canadense, mussarela e requeijão.","Pizzas","pizza"],
+["Frango com requeijão","65,90","Frango desfiado, mussarela e requeijão.","Pizzas","pizza"],
+["Gaúcha","65,90","Calabresa moída, milho, mussarela e ovo.","Pizzas","pizza"],
+["Marguerita","65,90","Manjericão, mussarela, parmesão e tomate.","Pizzas","pizza"],
+["Milho Verde","65,90","Milho, mussarela e requeijão.","Pizzas","pizza"],
+["Mista","65,90","Mussarela, presunto e tomate.","Pizzas","pizza"],
+["Napolitana","65,90","Mussarela, parmesão e tomate.","Pizzas","pizza"],
+["Palmito","65,90","Mussarela, palmito e requeijão.","Pizzas","pizza"],
+["Provençal","65,90","Cebola, mussarela, provolone e tomate.","Pizzas","pizza"],
+["Toscana","65,90","Calabresa moída, cebola, mussarela e requeijão.","Pizzas","pizza"],
+["Carpero","77,90","Champignon, mussarela, parmesão e requeijão.","Pizzas","pizza"],
+["Cosa Nostra","65,90","Mussarela, ovo, presunto e requeijão.","Pizzas","pizza"],
+["Dom Corleone","69,90","Cebola, frango desfiado, mussarela, palmito, presunto e requeijão.","Pizzas","pizza"],
+["Dom Pappone","69,90","Champignon, creme de leite, mussarela, presunto e tomate.","Pizzas","pizza"],
+["Dom Pappone Light","69,90","Mussarela, palmito, peito de peru e tomate.","Pizzas","pizza"],
+["Francesa","69,90","Lombo canadense, milho, mussarela e palmito.","Pizzas","pizza"],
+["Frango Bacon e Cheddar","69,90","Bacon, cheddar, frango desfiado e mussarela.","Pizzas","pizza"],
+["Gorgonzola","77,90","Gorgonzola, mussarela e tomate seco.","Pizzas","pizza"],
+["Moda do Chefe","69,90","Bacon, mussarela, palmito, presunto e requeijão.","Pizzas","pizza"],
+["Peperoni","77,90","Mussarela, peperoni e requeijão.","Pizzas","pizza"],
+["Portuguesa","69,90","Calabresa moída, cebola, mussarela, ovo, palmito, pimentão e presunto.","Pizzas","pizza"],
+["Rúcula Especial","69,90","Alho, bacon, mussarela, rúcula e tomate.","Pizzas","pizza"],
+["Siciliana","69,90","Champignon, mussarela e tomate.","Pizzas","pizza"],
+["Vegetariana","69,90","Champignon, milho, mussarela, palmito e tomate.","Pizzas","pizza"],
+["4 Queijos","69,90","Mussarela, parmesão, provolone e requeijão.","Pizzas","pizza"],
+["5 Queijos","77,90","Cheddar, mussarela, parmesão, provolone e requeijão.","Pizzas","pizza"],
+["Brigadeiro","62,90","Brigadeiro e chocolate granulado.","Doces","sweet"],
+["Doce Sonho","62,90","Bombom sonho de valsa e brigadeiro.","Doces","sweet"],
+["Paçoca","62,90","Brigadeiro branco e paçoca.","Doces","sweet"],
+["Prestígio","62,90","Brigadeiro e coco ralado.","Doces","sweet"],
+["Hamburgão","14,90","Pão e bife. Acompanha milho e batata palha.","Sanduíches","burger"],
+["X-Burgão","17,90","Pão, bife e queijo. Acompanha milho e batata palha.","Sanduíches","burger"],
+["X-Burgão Bacon","20,90","Pão, bife, queijo e bacon. Acompanha milho e batata palha.","Sanduíches","burger"],
+["X-Frango","17,90","Pão, filé de frango e queijo. Acompanha milho e batata palha.","Sanduíches","burger"],
+["Batata frita","31,90","Porção de batatas fritas.","Porções","fries"],
+["Batata frita com queijo","41,90","Batata frita com mussarela ou parmesão.","Porções","fries"],
+["Batata frita com queijo e bacon","51,90","Batata frita, queijo e bacon.","Porções","fries"],
+["Calabresa acebolada","41,90","Com ou sem cebola.","Porções","portion"],
+["Calabresa com mandioca","36,90","Com ou sem cebola.","Porções","portion"],
+["Contra-filé acebolado","89,90","Com ou sem cebola.","Porções","portion"],
+["Contra-filé com fritas","79,90","Acompanha batata frita.","Porções","portion"],
+["Filé de frango com fritas","41,90","Filé de frango acompanhado de fritas.","Porções","portion"],
+["Isca de frango","45,90","Filé de frango empanado.","Porções","portion"],
+["Mandioca","31,90","Porção de mandioca.","Porções","portion"],
+["Quinteto Especial","109,90","Contra-filé, filé de frango, calabresa, fritas e mandioca.","Porções","portion"],
+["Coca-Cola 2 litros","16,90","Refrigerante.","Bebidas","drink"],
+["Coca-Cola 600 ml","9,50","Refrigerante.","Bebidas","drink"],
+["Coca-Cola lata","8,50","Refrigerante.","Bebidas","drink"],
+["Fanta Laranja","9,50","Refrigerante.","Bebidas","drink"],
+["Fanta Uva","9,50","Refrigerante.","Bebidas","drink"],
+["Sprite","8,50","Refrigerante.","Bebidas","drink"],
+["Guaraná Kuat","8,50","Refrigerante.","Bebidas","drink"],
+["Água mineral sem gás","3,90","Água mineral.","Bebidas","drink"],
+["Água mineral com gás","4,90","Água mineral.","Bebidas","drink"]
+];
+const productPhotos = {"Pizza a moda do cliente": "https://dompappone.com.br/detalhes/dd06008dd4a65d26ff642c8559efe3db.jpg", "Alho": "https://dompappone.com.br/detalhes/9eb639d3717d85279f1f05864f1dc833.jpg", "Atum": "https://dompappone.com.br/detalhes/16b8f9998c314f2c890bb034cb7f3822.jpg", "Baiana": "https://dompappone.com.br/detalhes/daf669e75c6f61619211e10cdfd55c3d.jpg", "Bacon": "https://dompappone.com.br/detalhes/b3497cd889e13fb23311e7e8c08b0693.jpg", "Caipira": "https://dompappone.com.br/detalhes/26b588b14f76cc12a611ef024d77fe7d.jpg", "Calabresa": "https://dompappone.com.br/detalhes/cc1f87b470d9bb49f4fc60bf9c9fb2e9.jpg", "Camaiore": "https://dompappone.com.br/detalhes/641880871dadde608943656ee87b0e3c.jpg", "Canadense": "https://dompappone.com.br/detalhes/5873b301df2e39e5d986d8b54eb111fc.jpg", "Frango com requeijão": "https://dompappone.com.br/detalhes/4a02c2ba2c8910f8db9630e92ca88357.jpg", "Gaúcha": "https://dompappone.com.br/detalhes/19a29a251d0391e2483e1b047f371107.jpg", "Marguerita": "https://dompappone.com.br/detalhes/280bc3f1a2f5a48eb89195a952a8af94.jpg", "Milho Verde": "https://dompappone.com.br/detalhes/7d472b56964dff9b6b41bd1964a78572.jpg", "Mista": "https://dompappone.com.br/detalhes/68c384ff86e624761046e8cd694eaf58.jpg", "Mussarela e Tomate": "https://dompappone.com.br/detalhes/003793c744156f12ecac8cfcfcd39d50.jpg", "Napolitana": "https://dompappone.com.br/detalhes/0085875e49fa3c94c2efd6d66eb9cad2.jpg", "Palmito": "https://dompappone.com.br/detalhes/83f250d709315ffa5568580d38e9ceec.jpg", "Provençal": "https://dompappone.com.br/detalhes/b087fc9115c23160861a37011e248ce9.jpg", "Toscana": "https://dompappone.com.br/detalhes/cb21f9391eebbc6c44ebc10648fb890c.jpg", "Carpero": "https://dompappone.com.br/detalhes/fd01f839e4ba48682dc90743f8d59c7d.jpg", "Cosa Nostra": "https://dompappone.com.br/detalhes/ab6911a33fbd3368b10d5ff66b1ba5cc.jpg", "Dom Corleone": "https://dompappone.com.br/detalhes/559eb2121304935bb4d39992c1143b8f.jpg", "Dom Pappone": "https://dompappone.com.br/detalhes/1ebf0f9add26bee5e5e8853d4daa2c50.jpg", "Dom Pappone Light": "https://dompappone.com.br/detalhes/545ebf01cd1c43d61ce1aab8b6c76fa0.jpg", "Francesa": "https://dompappone.com.br/detalhes/d57389f04efae59407ff79bf6d906d1a.jpg", "Frango Bacon e Cheddar": "https://dompappone.com.br/detalhes/f6cd0ec1f1eb7d9faea1801d4b5d240d.jpg", "Gorgonzola": "https://dompappone.com.br/detalhes/935d7792178920fe6ba20ca1a7d81f27.jpg", "Moda do Chefe": "https://dompappone.com.br/detalhes/fc590014683cc9043ced8d413984e211.jpg", "Peperoni": "https://dompappone.com.br/detalhes/e3a2943289e0acaf4caafe0597aa9e27.jpg", "Portuguesa": "https://dompappone.com.br/detalhes/740876dad43791c7d43ccaf888ace3f5.jpg", "Rúcula Especial": "https://dompappone.com.br/detalhes/e1b3bd0d791ad3219b116ea1c365eddc.jpg", "Siciliana": "https://dompappone.com.br/detalhes/2f8484a7c3d4c27a9ef1df5e9fecc491.jpg", "Vegetariana": "https://dompappone.com.br/detalhes/c55e4a4deed2c6f3b4299ac910c52353.jpg", "4 Queijos": "https://dompappone.com.br/detalhes/c2518261b3a4da98ae45bafa13c73d2a.jpg", "5 Queijos": "https://dompappone.com.br/detalhes/8da447cd8dca451730d61ca275c95733.jpg", "Brigadeiro": "https://dompappone.com.br/detalhes/301279507f7873e06b92e5132597818d.jpg", "Doce Sonho": "https://dompappone.com.br/detalhes/ada55e9b1c418ee4513d4b73ecdc4daf.jpg", "Paçoca": "https://dompappone.com.br/detalhes/d8b8bdb9ec165ee42f78aea6c351d9bb.jpg", "Prestígio": "https://dompappone.com.br/bibliotecaImagens/pizzas/066.jpg", "Hamburgão": "https://dompappone.com.br/detalhes/5670d8acbc9b32ec31bd6ab625dfe06d.jpg", "X-Burgão": "https://dompappone.com.br/detalhes/9508bac384c5a8300cdc47eff1a08c83.jpg", "X-Burgão Bacon": "https://dompappone.com.br/detalhes/4733fdd40ab0480578858595e98a3211.jpg", "X-Frango": "https://dompappone.com.br/detalhes/c55be1175632b234e611dd940cd3e99c.jpg", "Batata frita": "https://dompappone.com.br/detalhes/b6ac210539837a2ff49239eebabbc639.jpg", "Batata frita com queijo": "https://dompappone.com.br/detalhes/3700975df62b78ea933e8897ecbb7c61.jpg", "Batata frita com queijo e bacon": "https://dompappone.com.br/detalhes/b3a0e3dafe8030b547be2550a1612b61.jpg", "Calabresa acebolada": "https://dompappone.com.br/detalhes/555904fd5cd18cb030386c796af52aee.jpg", "Calabresa com mandioca": "https://dompappone.com.br/detalhes/f426b606c6eea7535e9e038b40903c16.jpg", "Contra-filé acebolado": "https://dompappone.com.br/detalhes/94ffe1f59b624e81bcdaaea83308f191.jpg", "Contra-filé com fritas": "https://dompappone.com.br/detalhes/11a312b95da112d5030ccfeaa0136ef2.jpg", "Filé de frango com fritas": "https://dompappone.com.br/detalhes/1ab6a50d0b6ce33057a0617df4823c70.jpg", "Isca de frango": "https://dompappone.com.br/detalhes/5a5e62b710cfbf197f4a47593cdee57d.jpg", "Mandioca": "https://dompappone.com.br/detalhes/7d2ef838ae212cc279d69b7137ae6c34.jpg", "Quinteto Especial": "https://dompappone.com.br/detalhes/d2f701cbcd2f5e1c041f653c5e5da5f7.jpg", "Coca-Cola 2 litros": "https://dompappone.com.br/detalhes/2a6c2a3dbf8990a872fce6ea48884208.jpg", "Coca-Cola 600 ml": "https://dompappone.com.br/detalhes/c40a0240913314ca6e17c501a90a98e5.jpg", "Coca-Cola lata": "https://dompappone.com.br/detalhes/22c4d5a6813724b60953a3cb74728862.jpg", "Fanta Laranja": "https://dompappone.com.br/detalhes/10574fde685d7d8ad06a5db858c5a6cf.jpg", "Fanta Uva": "https://dompappone.com.br/detalhes/0280a923ee9c385fa7f1fbedd1e51658.jpg", "Sprite": "https://dompappone.com.br/detalhes/406dc192dab06fd6eadc3a1320c1cc18.jpg", "Guaraná Kuat": "https://dompappone.com.br/detalhes/f086a3fb2947aefb043f55aaad0fb265.jpg", "Água mineral sem gás": "https://dompappone.com.br/detalhes/897fadcbe9be29a07e4848a188e9e1c5.jpg", "Água mineral com gás": "https://dompappone.com.br/detalhes/b45a74c645bdce59fd3ce9bb3eeb084e.jpg"};
+const fallbackPhoto = "https://dompappone.com.br/detalhes/9eb639d3717d85279f1f05864f1dc833.jpg";
+
+/* imagem de produto */
+const plateSVG='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#e9dcc3"/><circle cx="60" cy="60" r="34" fill="none" stroke="#b08d57" stroke-width="3"/><circle cx="60" cy="60" r="22" fill="none" stroke="#b08d57" stroke-width="2" opacity=".6"/></svg>');
+function productImg(p){
+ const fb=p[3]==='Bebidas'?plateSVG:fallbackPhoto;
+ return `<img loading="lazy" src="${productPhotos[p[0]]||fb}" onerror="this.onerror=null;this.src='${fb}'" alt="${p[0]}" />`;
+}
+const BUILD_NAME="Pizza a moda do cliente";
+let category="Todas";
+const container=document.getElementById("products");
+function render(){
+ const q=document.getElementById("search").value.toLocaleLowerCase("pt-BR");
+ const filtered=products.filter(p=>(category==="Todas"||p[3]===category)&&(`${p[0]} ${p[2]}`).toLocaleLowerCase("pt-BR").includes(q));
+ container.innerHTML=filtered.length?filtered.map(p=>`<article class="product${(p[3]==='Bebidas'||p[3]==='Sanduíches')?' is-framed':''}">${productImg(p)}<div class="product-info"><div class="product-top"><h3>${p[0]}</h3><span class="price">R$ ${p[1]}</span></div><p>${p[2]}</p>${p[0]===BUILD_NAME?`<button class="add-product" type="button" data-build="1">Montar minha pizza <span>＋</span></button>`:`<button class="add-product" type="button" data-add="${p[0]}">Adicionar à sacola <span>＋</span></button>`}</div></article>`).join(""):`<div class="empty">Nenhum item encontrado. Tente outra busca.</div>`;
+}
+document.getElementById("tabs").addEventListener("click",e=>{const b=e.target.closest("button[data-category]");if(!b)return;category=b.dataset.category;document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t===b));render()});
+document.getElementById("search").addEventListener("input",render);
+document.getElementById("mobileToggle").addEventListener("click",()=>document.getElementById("navlinks").classList.toggle("open"));
+document.querySelectorAll(".navlinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navlinks").classList.remove("open")));
+document.getElementById("year").textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+// Sacola e fluxo de delivery/retirada
+const deliveryReq=['cep','address','number','neighborhood'];
+const setDeliveryReq=on=>deliveryReq.forEach(n=>document.querySelector('[name="'+n+'"]').required=on);
+setDeliveryReq(true);
+const cart = new Map();const notes = new Map();
+const esc=t=>String(t).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+const money = value => value.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const custom = new Map();
+const priceOf = name => custom.has(name)?custom.get(name).price:Number(products.find(p=>p[0]===name)[1].replace('.','').replace(',','.'));
+const lineTitle = key => custom.has(key)?(custom.get(key).base||BUILD_NAME):key;
+const canExtras = key => custom.has(key)?!!custom.get(key).base:((products.find(p=>p[0]===key)||[])[3]==='Pizzas'&&key!==BUILD_NAME);
+const lineParts = key => {if(!custom.has(key))return [];const c=custom.get(key);if(c.base)return ['Adicionais: '+c.extras.join(', ')];return ['Tamanho: '+c.size,'Ingredientes: '+(c.ings.join(', ')||'nenhum')].concat(c.extras.length?['Adicionais: '+c.extras.join(', ')]:[])};
+const cartDrawer=document.getElementById('cartDrawer'), drawerBackdrop=document.getElementById('drawerBackdrop');
+function openCart(){cartDrawer.classList.add('open');drawerBackdrop.classList.add('open');cartDrawer.setAttribute('aria-hidden','false');document.body.classList.add('drawer-open')}
+function closeCart(){cartDrawer.classList.remove('open');drawerBackdrop.classList.remove('open');cartDrawer.setAttribute('aria-hidden','true');document.body.classList.remove('drawer-open')}
+function updateCart(){
+ const entries=[...cart.entries()];const count=entries.reduce((a,[,q])=>a+q,0);const subtotal=entries.reduce((a,[name,q])=>a+priceOf(name)*q,0);
+ document.getElementById('cartCount').textContent=count;
+ const bar=document.getElementById('cartBar');bar.classList.toggle('show',count>0);document.body.classList.toggle('has-cart',count>0);
+ document.getElementById('cartBarText').textContent='Ver sacola · '+count+(count===1?' item':' itens');document.getElementById('cartBarTotal').textContent=money(subtotal);
+ updateFee();
+ try{localStorage.setItem('dp-cart',JSON.stringify(entries));localStorage.setItem('dp-custom',JSON.stringify([...custom].filter(([k])=>cart.has(k))))}catch(e){}
+ document.getElementById('cartSubtotal').textContent=money(subtotal);document.getElementById('checkoutSubtotal').textContent=money(subtotal);document.getElementById('goCheckout').disabled=!count;
+ document.getElementById('cartItems').innerHTML=entries.length?entries.map(([name,q])=>`<div class="cart-row"><div><h3>${esc(lineTitle(name))}</h3><small>${money(priceOf(name))} cada</small>${custom.has(name)?`<p class="cart-detail">${esc(lineParts(name).join(" · "))}</p>`:""}${canExtras(name)?`<button type="button" class="btn-mini row-extras" data-extras="${esc(name)}">${custom.has(name)?"✎ Editar opcionais":"＋ Adicionar opcionais"}</button>`:""}</div><div class="qty-control"><button data-qty="-1" data-name="${esc(name)}" aria-label="Diminuir">−</button><strong>${q}</strong><button data-qty="1" data-name="${esc(name)}" aria-label="Aumentar">＋</button></div><input class="item-note" data-note="${esc(name)}" maxlength="140" placeholder="Adicionar observação (ex.: sem cebola)" value="${esc(notes.get(name)||'')}" aria-label="Observação para ${esc(name)}"></div>`).join(""):`<div class="cart-empty">Sua sacola está vazia.<br><small>Adicione seus favoritos do cardápio.</small></div>`;
+}
+container.addEventListener('click',e=>{const btn=e.target.closest('[data-add]');if(!btn)return;const name=btn.dataset.add;cart.set(name,(cart.get(name)||0)+1);updateCart();btn.classList.add('added');btn.innerHTML='Adicionado <span>✓</span>';setTimeout(()=>{btn.classList.remove('added');btn.innerHTML='Adicionar à sacola <span>＋</span>'},900)});
+document.getElementById('cartItems').addEventListener('click',e=>{const b=e.target.closest('[data-qty]');if(!b)return;const name=b.dataset.name;const next=(cart.get(name)||0)+Number(b.dataset.qty);if(next<=0){cart.delete(name);notes.delete(name);custom.delete(name)}else cart.set(name,next);updateCart()});
+document.getElementById('cartItems').addEventListener('input',e=>{const i=e.target.closest('[data-note]');if(!i)return;const v=i.value.trim();if(v)notes.set(i.dataset.note,v);else notes.delete(i.dataset.note);try{localStorage.setItem('dp-notes',JSON.stringify([...notes]))}catch(err){}});
+document.getElementById('openCart').addEventListener('click',openCart);document.getElementById('cartBar').addEventListener('click',openCart);document.getElementById('closeCart').addEventListener('click',closeCart);drawerBackdrop.addEventListener('click',closeCart);
+const checkoutBackdrop=document.getElementById('checkoutBackdrop');
+document.getElementById('goCheckout').addEventListener('click',()=>{updateFee();closeCart();checkoutBackdrop.classList.add('open');document.body.classList.add('drawer-open');document.getElementById('orderResult').classList.add('hidden');document.getElementById('checkoutForm').classList.remove('hidden')});
+function closeCheckout(){checkoutBackdrop.classList.remove('open');document.body.classList.remove('drawer-open')}
+document.getElementById('closeCheckout').addEventListener('click',closeCheckout);checkoutBackdrop.addEventListener('click',e=>{if(e.target===checkoutBackdrop)closeCheckout()});
+document.querySelectorAll('input[name="fulfillment"]').forEach(r=>r.addEventListener('change',()=>{const delivery=document.querySelector('input[name="fulfillment"]:checked').value==='Delivery';document.getElementById('addressFields').classList.toggle('hidden',!delivery);setDeliveryReq(delivery)}));
+document.querySelectorAll('input[name="payment"]').forEach(r=>r.addEventListener('change',()=>document.getElementById('changeField').classList.toggle('hidden',document.querySelector('input[name="payment"]:checked').value!=='Dinheiro')));
+
+
+
+/* ===== monte sua pizza ===== */
+const guarnicoes=["Alho","Atum","Azeitona","Bacon","Calabresa","Calabresa Fatiada","Calabresa Moída","Cebola","Champignon","Cheddar","Creme de leite","Frango com requeijão","Frango desfiado","Gorgonzola","Lombo Canadense","Manjericão","Milho","Molho de Pimenta","Mussarela","Orégano","Ovo","Palmito","Parmesão","Peito de Peru","Peperoni","Presunto","Provolone","Requeijão","Rúcula","Tomate","Tomate Seco"];
+const extrasCats=[["Carne",10,[["Atum",5],["Bacalhau",5],["Bacon",3],["Calabresa Fatiada",3],["Calabresa Moída",2],["Frango desfiado",3],["Ovo",1],["Presunto",2]]],["Complemento",10,[["Creme de Leite",1]]],["Frios",10,[["Azeitona Verde",1],["Champignon",3],["Palmito",2],["Peito de Peru",2]]],["Fruta",10,[["Tomate Seco",3]]],["Guarnições",8,[["Peperoni",5]]],["Legumes",10,[["Alho Frito",2],["Cebola",1],["Milho",1],["Pimentão",1],["Tomate",1]]],["Queijo",10,[["Cheddar",3],["Mussarela",3],["Parmesão",2],["Provolone",2],["Requeijão",3]]],["Tempero",10,[["Molho de Pimenta",.5]]],["Verdura",10,[["Manjericão",1],["Rúcula",1]]]];
+const extraPrice=new Map(extrasCats.flatMap(c=>c[2]));
+const extraOrder=extrasCats.flatMap(c=>c[2].map(x=>x[0]));
+(()=>{
+ const $=id=>document.getElementById(id);
+ const bd=$('builderBackdrop'),ex=$('extrasBackdrop'),list=$('bList'),cnt=$('bCount'),qtyEl=$('bQty'),totalEl=$('bTotal'),addBtn=$('builderAdd'),sum=$('bExtrasSum'),exBody=$('extrasBody');
+ const MAX=8;let sel=new Set(),extras=new Set(),qty=1,mode='builder',lineKey=null;
+ list.innerHTML=guarnicoes.map(n=>`<label class="tg"><span>${n}</span><input type="checkbox" value="${n}"><i></i></label>`).join('');
+ exBody.innerHTML=extrasCats.map(([cat,max,items])=>`<h4>${cat} <small>(máximo de ${max} itens)</small></h4><div data-cat="${cat}" data-max="${max}">`+items.map(([n,pr])=>`<label class="ex-row"><input type="checkbox" value="${n}"><span>${n}</span><b>${money(pr)}</b></label>`).join('')+'</div>').join('');
+ const unit=()=>priceOf(BUILD_NAME)+[...extras].reduce((a,n)=>a+extraPrice.get(n),0);
+ function refresh(){
+  cnt.textContent=sel.size+'/'+MAX;cnt.classList.toggle('full',sel.size>=MAX);
+  list.querySelectorAll('.tg').forEach(l=>l.classList.toggle('disabled',sel.size>=MAX&&!l.querySelector('input').checked));
+  const exs=extraOrder.filter((n,i)=>extras.has(n)&&extraOrder.indexOf(n)===i);
+  const extraTotal=[...extras].reduce((a,n)=>a+extraPrice.get(n),0);
+  sum.innerHTML=extras.size?`<b>${extras.size} ${extras.size===1?'adicional':'adicionais'}</b> · +${money(extraTotal)}<br>${[...extras].join(', ')}`:'Nenhum adicional escolhido.';
+  qtyEl.textContent=qty;totalEl.textContent=money(unit()*qty);
+  addBtn.disabled=sel.size+extras.size===0;addBtn.title=addBtn.disabled?'Escolha pelo menos um ingrediente':'';
+ }
+ list.addEventListener('change',e=>{const i=e.target;if(i.type!=='checkbox')return;
+  if(i.checked&&sel.size>=MAX){i.checked=false;cnt.classList.remove('shake');void cnt.offsetWidth;cnt.classList.add('shake');return}
+  i.checked?sel.add(i.value):sel.delete(i.value);refresh()});
+ exBody.addEventListener('change',e=>{const i=e.target;if(i.type!=='checkbox')return;const g=i.closest('[data-cat]');
+  if(i.checked&&g.querySelectorAll('input:checked').length>Number(g.dataset.max)){i.checked=false;return}
+  i.checked?extras.add(i.value):extras.delete(i.value);refresh()});
+ const open=b=>{b.classList.add('open');document.body.classList.add('drawer-open')};
+ function openBuilder(){
+  sel=new Set();extras=new Set();qty=1;
+  list.querySelectorAll('input').forEach(i=>i.checked=false);exBody.querySelectorAll('input').forEach(i=>i.checked=false);list.scrollTop=0;
+  $('builderImg').src=productPhotos[BUILD_NAME]||fallbackPhoto;$('builderImg').onerror=function(){this.onerror=null;this.src=fallbackPhoto};
+  refresh();open(bd);
+ }
+ function closeBuilder(){ex.classList.remove('open');bd.classList.remove('open');document.body.classList.remove('drawer-open')}
+ container.addEventListener('click',e=>{if(e.target.closest('[data-build]'))openBuilder()});
+ $('closeBuilder').addEventListener('click',closeBuilder);$('builderBack').addEventListener('click',closeBuilder);
+ bd.addEventListener('click',e=>{if(e.target===bd)closeBuilder()});
+ $('openExtras').addEventListener('click',()=>{mode='builder';$('extrasFor').textContent='';$('closeExtras').textContent='Fechar';exBody.scrollTop=0;ex.classList.add('open')});
+ function openLineExtras(key){
+  mode='line';lineKey=key;const c=custom.get(key),base=c&&c.base?c.base:key;
+  extras=new Set(c&&c.extras?c.extras:[]);
+  exBody.querySelectorAll('input').forEach(i=>i.checked=extras.has(i.value));
+  $('extrasFor').textContent=base;$('closeExtras').textContent='Confirmar';exBody.scrollTop=0;ex.classList.add('open');
+ }
+ function applyLine(){
+  const c=custom.get(lineKey),base=c&&c.base?c.base:lineKey;
+  const exs=extraOrder.filter(n=>extras.has(n));
+  const newKey=exs.length?base+'|+|'+exs.join(','):base;
+  if(newKey===lineKey||!cart.has(lineKey))return;
+  const q=cart.get(lineKey),note=notes.get(lineKey);
+  cart.delete(lineKey);notes.delete(lineKey);custom.delete(lineKey);
+  cart.set(newKey,(cart.get(newKey)||0)+q);
+  if(note&&!notes.has(newKey))notes.set(newKey,note);
+  if(exs.length)custom.set(newKey,{base,extras:exs,price:priceOf(base)+exs.reduce((a,n)=>a+extraPrice.get(n),0)});
+  try{localStorage.setItem('dp-notes',JSON.stringify([...notes]))}catch(e){}
+  updateCart();
+ }
+ $('cartItems').addEventListener('click',e=>{const b=e.target.closest('[data-extras]');if(b)openLineExtras(b.dataset.extras)});
+ const closeEx=()=>{if(!ex.classList.contains('open'))return;ex.classList.remove('open');if(mode==='line')applyLine();mode='builder';$('extrasFor').textContent='';$('closeExtras').textContent='Fechar'};
+ $('closeExtras').addEventListener('click',closeEx);$('closeExtrasX').addEventListener('click',closeEx);ex.addEventListener('click',e=>{if(e.target===ex)closeEx()});
+ addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(ex.classList.contains('open'))closeEx();else if(bd.classList.contains('open'))closeBuilder()});
+ $('bMinus').addEventListener('click',()=>{qty=Math.max(1,qty-1);refresh()});$('bPlus').addEventListener('click',()=>{qty=Math.min(20,qty+1);refresh()});
+ addBtn.addEventListener('click',()=>{
+  if(addBtn.disabled)return;
+  const ings=guarnicoes.filter(n=>sel.has(n)),exs=extraOrder.filter(n=>extras.has(n)),size=$('bSize').value;
+  const key=BUILD_NAME+'|'+size+'|'+ings.join(',')+'|'+exs.join(',');
+  custom.set(key,{size,ings,extras:exs,price:unit()});
+  cart.set(key,(cart.get(key)||0)+qty);
+  updateCart();closeBuilder();openCart();
+ });
+})();
+
+/* ===== bairros atendidos e taxa de entrega ===== */
+const bairros=[["Aeroporto",13],["Autos dos Passos",13],["Avenida dos Andradas",15],["Bela Aurora",9],["Bom Pastor",13],["Cascatinha",0],["Centro",13],["Condomínio Alto do Pinheiro",15],["Condomínio Portal do Aeroporto",13],["Condomínio São Lucas",13],["Cruzeiro do Sul",13],["Dom Bosco",9],["Estádio",9],["Estrela Sul",0],["Grambery",13],["Ipiranga",13],["Ipiranguinha",13],["Itatiaia",13],["Jardim Casablanca",13],["Jardim de Ala",14],["Jardim Gaúcho",11],["Jardim Glória",15],["Jardim Laranjeiras",0],["Marilândia",14],["Martelos",13],["Morro da Glória",15],["Morro Imperial",13],["Nova Califórnia",14],["Novo Horizonte",14],["Paineiras",13],["Parque Guadalajara",13],["Parque Imperial",15],["Passos",13],["Previdenciários",15],["Residencial Neo",17],["Sagrado",15],["Salvaterra",13],["Santa Catarina",15],["Santa Cecília",9],["Santa Efigênia",13],["Santa Helena",13],["Santa Luzia",13],["Santos Dumont",13],["São Mateus",9],["São Pedro",13],["Serro Azul",13],["Spina Villa",15],["Teixeiras",0],["Vale do Ype",15]].sort((a,b)=>a[0].localeCompare(b[0],'pt-BR'));
+const bairroFee=new Map(bairros);
+const normTxt=t=>(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
+const bairroByNorm=new Map(bairros.map(b=>[normTxt(b[0]),b[0]]));
+const feeLabel=f=>f===0?'Grátis':money(f);
+(()=>{
+ document.getElementById('addrDistrict').insertAdjacentHTML('beforeend',bairros.map(b=>`<option value="${b[0]}">${b[0]} — ${feeLabel(b[1])}</option>`).join(''));
+ const grid=document.getElementById('areaGrid'),q=document.getElementById('areaSearch');
+ const draw=()=>{const t=normTxt(q.value);const list=bairros.filter(b=>normTxt(b[0]).includes(t));grid.innerHTML=list.length?list.map(b=>`<div class="area${b[1]===0?' free':''}"><span>${b[0]}</span><b>${feeLabel(b[1])}</b></div>`).join(''):'<div class="empty">Não encontramos esse bairro na lista. Fale com a gente para confirmar a entrega.</div>'};
+ q.addEventListener('input',draw);draw();
+})();
+const isDelivery=()=>document.querySelector('input[name="fulfillment"]:checked').value==='Delivery';
+const feeOf=()=>{const b=document.getElementById('addrDistrict').value;return isDelivery()&&bairroFee.has(b)?bairroFee.get(b):null};
+function updateFee(){
+ const sub=[...cart.entries()].reduce((a,[n,q])=>a+priceOf(n)*q,0),fee=feeOf();
+ document.getElementById('checkoutFee').textContent=isDelivery()?(fee===null?'Selecione o bairro':feeLabel(fee)):'Retirada — sem taxa';
+ document.getElementById('checkoutTotal').textContent=money(sub+(fee||0));
+}
+document.getElementById('addrDistrict').addEventListener('change',updateFee);
+document.querySelectorAll('input[name="fulfillment"]').forEach(r=>r.addEventListener('change',updateFee));
+
+/* ===== busca por CEP ===== */
+(()=>{
+ const inp=document.getElementById('cepInput'),btn=document.getElementById('cepBtn'),st=document.getElementById('cepStatus');
+ const street=document.getElementById('addrStreet'),dist=document.getElementById('addrDistrict'),city=document.getElementById('addrCity'),num=document.getElementById('addrNumber');
+ const say=(t,k='')=>{st.textContent=t;st.className='cep-status '+k};
+ const digits=()=>inp.value.replace(/\D/g,'').slice(0,8);
+ const inJF=d=>Number(d)>=36000000&&Number(d)<=36099999;
+ let last='';
+ async function lookup(){
+  const d=digits();
+  if(d.length!==8){say('Digite os 8 números do CEP.','err');return}
+  if(d===last)return;last=d;
+  btn.disabled=true;btn.textContent='Buscando…';say('Buscando endereço…');
+  const ctl=new AbortController(),to=setTimeout(()=>ctl.abort(),6000);
+  try{
+   const r=await fetch('https://viacep.com.br/ws/'+d+'/json/',{signal:ctl.signal});
+   if(!r.ok)throw new Error('http');
+   const j=await r.json();
+   if(j.erro){say('CEP não encontrado. Confira os números ou preencha o endereço manualmente.','err');last='';return}
+   street.value=j.logradouro||street.value;const mb=bairroByNorm.get(normTxt(j.bairro));if(mb)dist.value=mb;updateFee();city.value=(j.localidade||'')+(j.uf?' - '+j.uf:'');
+   if(j.localidade&&j.localidade.toLowerCase()!=='juiz de fora')say('Esse CEP é de '+j.localidade+'/'+j.uf+'. Confirme com o restaurante se entregamos aí.','warn');
+   else if(j.bairro&&!bairroByNorm.has(normTxt(j.bairro)))say('Não achei o bairro "'+j.bairro+'" na nossa lista de entrega. Escolha o bairro mais próximo ou confirme com o restaurante.','warn');
+   else say('Endereço encontrado ✓ Agora é só informar o número.','ok');
+   (j.logradouro?num:street).focus();
+  }catch(err){
+   last='';
+   if(inJF(d)){city.value=city.value||'Juiz de Fora - MG';say('Não consegui consultar agora, mas o CEP é de Juiz de Fora. Preencha rua e bairro manualmente.','warn')}
+   else say('Não foi possível consultar o CEP agora. Preencha o endereço manualmente.','err');
+  }finally{clearTimeout(to);btn.disabled=false;btn.textContent='Buscar CEP'}
+ }
+ inp.addEventListener('input',()=>{let d=digits();inp.value=d.length>5?d.slice(0,5)+'-'+d.slice(5):d;if(d.length<8){last='';say('Digite o CEP e preenchemos o endereço para você.')}else lookup()});
+ inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();lookup()}});
+ btn.addEventListener('click',lookup);
+})();
+
+document.getElementById('checkoutForm').addEventListener('submit',e=>{
+ e.preventDefault();const f=new FormData(e.currentTarget);const fulfillment=f.get('fulfillment');const fee=feeOf();const lines=[...cart.entries()].map(([name,q])=>`${q}x ${lineTitle(name)} — ${money(priceOf(name)*q)}${custom.has(name)?'\n   '+lineParts(name).join('\n   '):''}${notes.get(name)?'\n   Obs: '+notes.get(name):''}`);const subtotal=[...cart.entries()].reduce((a,[n,q])=>a+priceOf(n)*q,0);
+ const summary=['DOM PAPPONE — PEDIDO',...lines,'',`Subtotal: ${money(subtotal)}`,fulfillment==='Delivery'?`Taxa de entrega (${f.get('neighborhood')}): ${feeLabel(fee)}`:'Retirada no local (sem taxa)',`Total: ${money(subtotal+(fee||0))}`,'',`Cliente: ${f.get('customer')}`,`Telefone: ${f.get('phone')}`,`Recebimento: ${fulfillment}`,...(fulfillment==='Delivery'?[`Endereço: ${f.get('address')}, ${f.get('number')}${f.get('complement')?' - '+f.get('complement'):''}`,`Bairro: ${f.get('neighborhood')}`,`Cidade: ${f.get('city')||'Não informada'}`,`CEP: ${f.get('cep')}`,`Referência: ${f.get('reference')||'Não informada'}`]:[]),`Pagamento: ${f.get('payment')}`,...(f.get('payment')==='Dinheiro'&&f.get('change')?[`Troco para: ${f.get('change')}`]:[]),`Observações: ${f.get('note')||'Nenhuma'}`].join('\n');
+ document.getElementById('orderSummary').textContent=summary;
+ const waUrl='https://wa.me/553230829420?text='+encodeURIComponent(summary);
+ document.getElementById('waSend').href=waUrl;window.open(waUrl,'_blank','noopener');document.getElementById('checkoutForm').classList.add('hidden');document.getElementById('orderResult').classList.remove('hidden');
+});
+document.getElementById('copyOrder').addEventListener('click',async()=>{const text=document.getElementById('orderSummary').textContent;try{await navigator.clipboard.writeText(text);document.getElementById('copyOrder').textContent='Resumo copiado ✓'}catch{document.getElementById('copyOrder').textContent='Selecione e copie o resumo acima'}});
+
+try{(JSON.parse(localStorage.getItem('dp-custom')||'[]')).forEach(([k,v])=>{if(v&&typeof v.price==='number'&&(Array.isArray(v.ings)||(v.base&&Array.isArray(v.extras))))custom.set(k,v)})}catch(e){}
+try{(JSON.parse(localStorage.getItem('dp-notes')||'[]')).forEach(([n,t])=>{if(products.some(p=>p[0]===n)||custom.has(n))notes.set(n,t)})}catch(e){}
+try{(JSON.parse(localStorage.getItem('dp-cart')||'[]')).forEach(([n,q])=>{if((products.some(p=>p[0]===n)||custom.has(n))&&q>0)cart.set(n,q)})}catch(e){}
+updateCart();
+render();
+
+/* animacoes */
+(()=>{
+ const hdr=document.querySelector('header');
+ const onScroll=()=>hdr.classList.toggle('scrolled',scrollY>12);
+ addEventListener('scroll',onScroll,{passive:true});onScroll();
+ const cc=document.getElementById('cartCount');
+ new MutationObserver(()=>{cc.classList.remove('bump');void cc.offsetWidth;cc.classList.add('bump')}).observe(cc,{childList:true,characterData:true,subtree:true});
+ const stagger=()=>[...container.children].forEach((el,i)=>{
+  el.style.animationDelay=Math.min(i,11)*45+'ms';
+  const h=el.querySelector('h3');if(!h)return;
+  const p=products.find(x=>x[0]===h.textContent),cat=p?p[3]:'';el.dataset.cat=cat;
+  const img=el.querySelector(':scope > img');
+  
+ });
+ document.addEventListener('dragstart',e=>{if(e.target.tagName==='IMG')e.preventDefault()});
+ new MutationObserver(stagger).observe(container,{childList:true});stagger();
+ const nl=document.getElementById('navlinks'),mt=document.getElementById('mobileToggle');
+ addEventListener('keydown',e=>{if(e.key==='Escape')nl.classList.remove('open')});
+ addEventListener('pointerdown',e=>{if(nl.classList.contains('open')&&!nl.contains(e.target)&&!mt.contains(e.target))nl.classList.remove('open')});
+ document.addEventListener('touchstart',()=>{},{passive:true});
+})();
+</script>
+</body></html>
